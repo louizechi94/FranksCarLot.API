@@ -1,13 +1,10 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace FranksCarLot.Modeles.CarModeles
+namespace FranksCarLot.API.FranksCarLot.Modeles.CarModeles
 {
-    public class CarCreate
-    {   
+    public class CarEdit
+    {
+        
         [Required]
         public Guid Id { get; set; }
         
@@ -24,6 +21,5 @@ namespace FranksCarLot.Modeles.CarModeles
 
         [Required]
         public int CarLotId { get; set; }
-       
     }
 }
