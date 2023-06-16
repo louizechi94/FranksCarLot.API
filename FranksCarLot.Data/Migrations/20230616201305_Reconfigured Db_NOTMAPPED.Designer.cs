@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FranksCarLot.Data.Migrations
 {
     [DbContext(typeof(FranksDbContext))]
-    [Migration("20230616175106_Added_Cars_CustomerPurchases_Tables")]
-    partial class AddedCarsCustomerPurchasesTables
+    [Migration("20230616201305_Reconfigured Db_NOTMAPPED")]
+    partial class ReconfiguredDbNOTMAPPED
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,9 +27,8 @@ namespace FranksCarLot.Data.Migrations
 
             modelBuilder.Entity("FranksCarLot.Data.Entities.Car", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("CarLotId")
                         .HasColumnType("int");
@@ -121,17 +120,14 @@ namespace FranksCarLot.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CarLotId")
-                        .HasColumnType("int");
+                    b.Property<string>("CarId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CarLotId");
-
-                    b.HasIndex("CustomerId");
 
                     b.ToTable("CustomerPurchases");
                 });
@@ -145,25 +141,6 @@ namespace FranksCarLot.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("CarLot");
-                });
-
-            modelBuilder.Entity("FranksCarLot.Data.Entities.CustomerPurchase", b =>
-                {
-                    b.HasOne("FranksCarLot.Data.Entities.CarLot", "CarLot")
-                        .WithMany()
-                        .HasForeignKey("CarLotId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FranksCarLot.Data.Entities.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CarLot");
-
-                    b.Navigation("Customer");
                 });
 
             modelBuilder.Entity("FranksCarLot.Data.Entities.CarLot", b =>

@@ -1,22 +1,22 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace FranksCarLot.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class AddedCartoCustomerPurchaseTable : Migration
+    public partial class ReconfiguredDbDelima02 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<Guid>(
+            migrationBuilder.AlterColumn<string>(
                 name: "CarId",
                 table: "CustomerPurchases",
-                type: "uniqueidentifier",
+                type: "nvarchar(450)",
                 nullable: false,
-                defaultValue: new Guid("00000000-0000-0000-0000-000000000000"));
+                oldClrType: typeof(string),
+                oldType: "nvarchar(max)");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CustomerPurchases_CarId",
@@ -29,7 +29,7 @@ namespace FranksCarLot.Data.Migrations
                 column: "CarId",
                 principalTable: "Cars",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
+                onDelete: ReferentialAction.Cascade);
         }
 
         /// <inheritdoc />
@@ -43,9 +43,13 @@ namespace FranksCarLot.Data.Migrations
                 name: "IX_CustomerPurchases_CarId",
                 table: "CustomerPurchases");
 
-            migrationBuilder.DropColumn(
+            migrationBuilder.AlterColumn<string>(
                 name: "CarId",
-                table: "CustomerPurchases");
+                table: "CustomerPurchases",
+                type: "nvarchar(max)",
+                nullable: false,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(450)");
         }
     }
 }

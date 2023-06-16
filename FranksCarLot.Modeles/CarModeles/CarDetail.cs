@@ -5,7 +5,7 @@ namespace FranksCarLot.API.FranksCarLot.Modeles.CarModeles
     public class CarDetail
     {
 
-        public Guid Id { get; set; }
+        public string Id { get; set; }
 
         public DateTime Year { get; set; }
 

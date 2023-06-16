@@ -10,7 +10,7 @@ namespace FranksCarLot.Data.Entities
     public class Car
     {
         [Key]
-        public Guid Id { get; set; }
+        public string Id { get; set; } = string.Empty;
         
         [Required]
         public DateTime Year { get; set; }

@@ -15,7 +15,7 @@ namespace FranksCarLot.Modeles.CarLotModeles
         [MaxLength(50)]
         public string State { get; set; }
 
-        [Required]
+        // [Required]
         [MaxLength(50)]
         public string Address { get; set; }
         [Required]

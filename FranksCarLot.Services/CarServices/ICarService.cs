@@ -11,8 +11,8 @@ namespace FranksCarLot.Services.CarServices
     {
         Task<bool> AddCar(CarCreate model);
         Task<bool> UpdateCar(CarEdit model);
-        Task<bool> DeleteCar(Guid id);
+        Task<bool> DeleteCar(string id);
         Task<List<CarListItem>> GetCars();
-        Task<CarDetail> GetCarById(Guid id);
+        Task<CarDetail> GetCarById(string id);
     }
 }

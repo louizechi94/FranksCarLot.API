@@ -9,7 +9,7 @@ namespace FranksCarLot.Modeles.CarModeles
     public class CarCreate
     {   
         [Required]
-        public Guid Id { get; set; }
+        public string Id { get; set; }
         
         [Required]
         public DateTime Year { get; set; }

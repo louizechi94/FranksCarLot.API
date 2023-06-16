@@ -21,11 +21,11 @@ namespace FranksCarLot.Services.CustomerPurchaseServices
 
         public async Task<bool> AddPurchase(CustomerPurchaseCreate model)
         {
+
             var entity = new CustomerPurchase
             {
                 CustomerId = model.CustomerId,
-                CarId = model.CarId,
-                CarLotId = model.CarLotId
+                CarId = model.CarId
             };
 
             await _context.CustomerPurchases.AddAsync(entity);
@@ -34,12 +34,16 @@ namespace FranksCarLot.Services.CustomerPurchaseServices
 
         public async Task<List<CustomerPurchaseListItem>> GetCustomerPurchases()
         {
-            return await _context.CustomerPurchases.Include(cp => cp.Customer).Include(cp => cp.CarLot).Select(cp => new CustomerPurchaseListItem
-            {
-                CustomerFirstName = cp.Customer.FirstName,
-                CustomerLastName = cp.Customer.LastName,
-                CarLotAddress = cp.CarLot.Address,
-            }).ToListAsync();
+            return await _context.CustomerPurchases.Include(cp => cp.Customer)
+                                                    .Include(cp => cp.PurchasedCar)
+                                                    .Select(cp => new CustomerPurchaseListItem
+                                                    {
+                                                        CustomerFirstName = cp.Customer.FirstName,
+                                                        CustomerLastName = cp.Customer.LastName,
+                                                        CarLotAddress = cp.PurchasedCar.CarLot.Address,
+                                                        CarName = cp.PurchasedCar.Model
+                                                    }).ToListAsync();
         }
     }
 }
+
