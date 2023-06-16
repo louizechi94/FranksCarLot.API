@@ -13,9 +13,9 @@ namespace FranksCarLot.Data.Context
         {
             
         }
-       // public DbSet<Car> Cars { get; set; }
+        public DbSet<Car> Cars { get; set; }
         public DbSet<CarLot> CarLots { get; set; }
         public DbSet<Customer> Customers { get; set; }
-        //public DbSet<CustomerPurchase> CustomerPurchases { get; set; }
+        public DbSet<CustomerPurchase> CustomerPurchases { get; set; }
     }
 }

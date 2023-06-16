@@ -23,5 +23,8 @@ namespace FranksCarLot.Data.Entities
         [Required]
         [MaxLength(20)]
         public string PhoneNumber { get; set; }
+
+        //setting up one-to-many relationship, this is the many side...
+        public List<Car> CarsOnLot { get; set; } = new List<Car>();
     }
 }

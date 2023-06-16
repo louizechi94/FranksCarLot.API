@@ -4,6 +4,7 @@ using FranksCarLot.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FranksCarLot.Data.Migrations
 {
     [DbContext(typeof(FranksDbContext))]
-    partial class FranksDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230616175106_Added_Cars_CustomerPurchases_Tables")]
+    partial class AddedCarsCustomerPurchasesTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
