@@ -13,6 +13,9 @@ namespace FranksCarLot.Modeles.CustomerPurchaseModeles
 
         [Required]
         public int CarLotId { get; set; }
+
+        [Required]
+         public Guid CarId { get; set; }
         
     }
 }

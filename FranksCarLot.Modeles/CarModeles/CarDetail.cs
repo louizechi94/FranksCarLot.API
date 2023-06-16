@@ -2,7 +2,7 @@ using FranksCarLot.Modeles.CarLotModeles;
 
 namespace FranksCarLot.API.FranksCarLot.Modeles.CarModeles
 {
-    public class CarDetails
+    public class CarDetail
     {
 
         public Guid Id { get; set; }
@@ -14,6 +14,6 @@ namespace FranksCarLot.API.FranksCarLot.Modeles.CarModeles
         public string Model { get; set; } = string.Empty;
 
         // VM only talk to VM , NEVER TO DOMAIN OBJ's!!!!!!
-        public CarLotListItem carLot { get; set; } = new CarLotListItem();
+        public CarLotListItem CarLot { get; set; } = new CarLotListItem();
     }
 }
