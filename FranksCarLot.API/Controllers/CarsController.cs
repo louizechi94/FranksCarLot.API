@@ -27,7 +27,7 @@ namespace FranksCarLot.API.Controllers
         }
 
         [HttpGet("{id:Guid}")]
-        public async Task<IActionResult> Get(Guid id)
+        public async Task<IActionResult> Get(string id)
         {
             var car = await _carService.GetCarById(id);
             if (car is null)
@@ -50,7 +50,7 @@ namespace FranksCarLot.API.Controllers
         }
 
         [HttpPut("{id:Guid}")]
-        public async Task<IActionResult> Put(CarEdit model, Guid id)
+        public async Task<IActionResult> Put(CarEdit model, string id)
         {
             if (id != model.Id)
             {
@@ -69,7 +69,7 @@ namespace FranksCarLot.API.Controllers
         }
 
         [HttpDelete("{id:Guid}")]
-        public async Task<IActionResult> Delete(Guid id)
+        public async Task<IActionResult> Delete(string id)
         {
             if (await _carService.DeleteCar(id))
                 return Ok("Car Deleted!");

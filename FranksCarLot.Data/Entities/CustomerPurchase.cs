@@ -15,16 +15,13 @@ namespace FranksCarLot.Data.Entities
         public int CustomerId { get; set; }
 
         [ForeignKey(nameof(CustomerId))]
-        public virtual Customer Customer { get; set; }= new Customer();
+   
+        public virtual Customer Customer { get; set; }
 
-        public int CarLotId { get; set; }
-
-        [ForeignKey(nameof(CarLotId))]
-        public virtual CarLot CarLot { get; set; }= new CarLot();
-
-        public Guid CarId { get; set; }
+        public string CarId { get; set; }
 
         [ForeignKey(nameof(CarId))]
-        public virtual Car PurchasedCar { get; set; }= new Car();
+     
+        public virtual Car PurchasedCar { get; set; }
     }
 }

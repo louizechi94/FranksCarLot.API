@@ -24,6 +24,7 @@ namespace FranksCarLot.Services.CarServices
         {
             var entity = new Car
             {
+                Id = Guid.NewGuid().ToString(),
                 Year = model.Year,
                 Make = model.Make,
                 Model = model.Model,
@@ -34,7 +35,7 @@ namespace FranksCarLot.Services.CarServices
             return await _context.SaveChangesAsync() > 0;
         }
 
-        public async Task<bool> DeleteCar(Guid id)
+        public async Task<bool> DeleteCar(string id)
         {
             var car = await _context.Cars.FirstOrDefaultAsync(x => x.Id == id);
 
@@ -46,7 +47,7 @@ namespace FranksCarLot.Services.CarServices
             return true;
         }
 
-        public async Task<CarDetail> GetCarById(Guid id)
+        public async Task<CarDetail> GetCarById(string id)
         {
             var car = await _context.Cars.Include(c => c.CarLot).FirstOrDefaultAsync(x => x.Id == id);
 
@@ -73,7 +74,7 @@ namespace FranksCarLot.Services.CarServices
             return await _context.Cars.Include(c => c.CarLot).Select(c => new CarListItem
             {
                 Make = c.Make,
-                Model = c.Make,
+                Model = c.Model,
                 CarLotAddress = c.CarLot.Address
             }).ToListAsync();
         }

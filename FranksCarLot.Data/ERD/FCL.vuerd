@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -25.5,
-    "scrollLeft": -58,
+    "scrollTop": -25,
+    "scrollLeft": -58.5,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -272,9 +272,9 @@
           }
         ],
         "ui": {
-          "active": true,
-          "left": 494.5929,
-          "top": 42.296,
+          "active": false,
+          "left": 558.483,
+          "top": 75.0741,
           "zIndex": 5,
           "widthName": 60,
           "widthComment": 60,
@@ -407,7 +407,7 @@
           "active": false,
           "left": 544.4436,
           "top": 351.6291,
-          "zIndex": 3,
+          "zIndex": 9,
           "widthName": 60,
           "widthComment": 60,
           "color": "#FF00EC"
@@ -489,9 +489,9 @@
             "id": "4b0d782b-6006-4653-b50f-8365ab5566f6"
           },
           {
-            "name": "CatLotId",
-            "comment": "FK",
-            "dataType": "INT",
+            "name": "CarId",
+            "comment": "PK",
+            "dataType": "NVARCHAR",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -506,17 +506,17 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 73.98876953125,
               "widthDefault": 60
             },
-            "id": "bb5e9808-c4dc-4bc3-92d8-1dfa41223182"
+            "id": "b497b1cb-b10a-49e2-9b80-ea657211275e"
           }
         ],
         "ui": {
           "active": false,
-          "left": 69.3331,
-          "top": 355.9998,
-          "zIndex": 2,
+          "left": 25.4437,
+          "top": 408.7782,
+          "zIndex": 13,
           "widthName": 113.26806640625,
           "widthComment": 60
         },
@@ -540,8 +540,8 @@
           "columnIds": [
             "00444967-7c66-470a-9c76-f8bbf20fa1f0"
           ],
-          "x": 691.612675390625,
-          "y": 213.796,
+          "x": 755.502775390625,
+          "y": 246.5741,
           "direction": "bottom"
         },
         "end": {
@@ -575,8 +575,8 @@
           "columnIds": [
             "4b0d782b-6006-4653-b50f-8365ab5566f6"
           ],
-          "x": 252.61972109375,
-          "y": 355.9998,
+          "x": 212.345311328125,
+          "y": 408.7782,
           "direction": "top"
         },
         "constraintName": "fk_customer_to_customerpurchase",
@@ -588,26 +588,26 @@
         "relationshipType": "OneN",
         "startRelationshipType": "Dash",
         "start": {
-          "tableId": "877f8b73-e67b-4857-8a0a-b7f85c66e993",
+          "tableId": "90321938-ce1f-47ac-9340-537aa254104e",
           "columnIds": [
-            "00444967-7c66-470a-9c76-f8bbf20fa1f0"
+            "aa84850f-c94c-45c7-b1fa-9b75041de38c"
           ],
-          "x": 494.5929,
-          "y": 128.046,
+          "x": 544.4436,
+          "y": 437.3791,
           "direction": "left"
         },
         "end": {
           "tableId": "ca89e724-435b-4031-a152-6f55cf7dce71",
           "columnIds": [
-            "bb5e9808-c4dc-4bc3-92d8-1dfa41223182"
+            "b497b1cb-b10a-49e2-9b80-ea657211275e"
           ],
-          "x": 435.9063421875,
-          "y": 431.4998,
+          "x": 399.24692265625,
+          "y": 484.2782,
           "direction": "right"
         },
-        "constraintName": "fk_carlot_to_customerpurchase",
+        "constraintName": "fk_car_to_customerpurchase",
         "visible": true,
-        "id": "f7a347f8-d49a-4486-8c83-5d25918bc34f"
+        "id": "fa0e05e5-47f5-4dd9-bde7-86f16e4f9d1a"
       }
     ]
   }

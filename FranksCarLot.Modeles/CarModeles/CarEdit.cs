@@ -6,7 +6,7 @@ namespace FranksCarLot.API.FranksCarLot.Modeles.CarModeles
     {
         
         [Required]
-        public Guid Id { get; set; }
+        public string Id { get; set; }
         
         [Required]
         public DateTime Year { get; set; }
